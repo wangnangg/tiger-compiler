@@ -11,18 +11,14 @@ echo testing $file
 if test -z $2; then
     cat $file
     echo -----------------------------------------------
-    sed "s:\$1:$file:g" live_template.sml | sml | python3 outfilter.py
+    sed "s:\$1:$file:g" live_template.sml | sml
     ret=$?
 else
-    sed "s:\$1:$file:g" live_template.sml | sml | python3 outfilter.py
+    sed "s:\$1:$file:g" live_template.sml | sml
     ret=$?
 fi
 echo ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 echo
 echo
-if test $ret -ne 0; then
-    echo testing aborted due to a failed test.
-    break
-fi
 done
 
