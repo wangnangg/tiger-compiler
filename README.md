@@ -1,4 +1,4 @@
-Register allocation
+# Another Tiger Compiler
 
 To compile a "test.tig" file into "test.tig.s":
     CM.make "sources.cm";
